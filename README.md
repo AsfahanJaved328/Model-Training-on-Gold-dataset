@@ -13,3 +13,9 @@ Naive beat all price models (Chronos-Bolt, Chronos-2, Chronos-2+cov, XGBoost) on
 
 ## Day 3
 5-day-ahead realized volatility forecasting. Results in `results/metrics_day3_vol.csv`.
+
+## Day 3 finding
+EWMA/HAR/Chronos-2 beat Persistence for 5-day vol (MAE -19% to -26%); HAR best overall, Chronos-2 not better than HAR.
+
+## Day 4
+Vol-targeting position sizing (cap 1x, costs included) vs Buy&Hold. Results in `results/metrics_day4_sizing.csv`.
