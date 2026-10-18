@@ -1,42 +1,13 @@
-# Model Training on Gold (and BTC) dataset
-Day 1: data download (to 2026-10-15), Naive / XGBoost / Chronos-Bolt zero-shot baselines.
-Results: `results/metrics.csv`, plots in `results/`.
+# Gold & BTC: forecasting and risk toolkit
+Research project (Kaggle + GitHub). Goal: test whether time-series models (Chronos, XGBoost, HAR, EWMA) give a tradable or risk-management edge on Gold and BTC.
 
-## Day 2
-250-day rolling-origin backtest: Naive, Chronos-Bolt, Chronos-2, Chronos-2+covariates, XGBoost (walk-forward). Results in `results/metrics_day2.csv` (MAE_vs_Naive, p-values vs Naive).
+**Result so far:** no edge in price direction or in return-seeking sizing; volatility and VaR forecasts are the useful part. See SUMMARY.md and REPORT.md.
 
-## Day 2
-250-day rolling-origin backtest: Naive, Chronos-Bolt, Chronos-2, Chronos-2+covariates, XGBoost (walk-forward). Results in `results/metrics_day2.csv` (MAE_vs_Naive, p-values vs Naive).
+## Files
+- SUMMARY.md, REPORT.md: conclusions and full tables. PROJECT_LOG.md: day-by-day log.
+- results/: metrics CSVs and plots.
+- forecast_today.py: daily vol / VaR / trend / inverse-vol-weight forecast -> results/forecast_log_v2.csv.
+- evaluate_log.py: scores past forecasts against realized outcomes -> results/forecast_eval.csv.
+- .github/workflows/daily_forecast.yml: runs both daily (GitHub Actions).
 
-## Day 2 finding
-Naive beat all price models (Chronos-Bolt, Chronos-2, Chronos-2+cov, XGBoost) on both GOLD and BTC; no tradable edge.
-
-## Day 3
-5-day-ahead realized volatility forecasting. Results in `results/metrics_day3_vol.csv`.
-
-## Day 3 finding
-EWMA/HAR/Chronos-2 beat Persistence for 5-day vol (MAE -19% to -26%); HAR best overall, Chronos-2 not better than HAR.
-
-## Day 4
-Vol-targeting position sizing (cap 1x, costs included) vs Buy&Hold. Results in `results/metrics_day4_sizing.csv`.
-
-## Day 4 finding
-GOLD: EWMA vol-targeting cut vol/DD/vol-of-vol vs Buy&Hold; BTC: almost no effect (target vol was too high, weights clipped at 1). Sharpe differences are within noise (300 days).
-
-## Day 5
-Robustness: 400-day window, two a-priori target definitions, matched constant-exposure controls, block-bootstrap CI for Sharpe difference. See `results/metrics_day5_robustness.csv`.
-
-## Day 5 finding
-GOLD+EWMA vol-targeting showed borderline-significant Sharpe gain vs Buy&Hold and vs constant-exposure control; GOLD+HAR and BTC did not. Correction: the Day 4 note blaming spike-inflated target vol for BTC is wrong (median target gave the same result).
-
-## Day 6
-Added `SUMMARY.md` and `forecast_today.py` (paper-tracking 5-day vol forecast, appends to `results/forecast_log.csv`).
-
-## Day 5 finding
-GOLD+EWMA vol-targeting showed borderline-significant Sharpe gain vs Buy&Hold and vs constant-exposure control; GOLD+HAR and BTC did not. Correction: the Day 4 note blaming spike-inflated target vol for BTC is wrong (median target gave the same result).
-
-## Day 6
-Added `SUMMARY.md` and `forecast_today.py` (paper-tracking 5-day vol forecast, appends to `results/forecast_log.csv`).
-
-## Day 5-7
-Robustness checks, clip-check (BTC cap explanation), fixed `forecast_today.py` (drops incomplete candle), and Day 7 long-history expanding walk-forward backtest with a pre-registered pass rule. See `SUMMARY.md`.
+Paper-tracking only. Not financial advice.
