@@ -1,0 +1,3 @@
+Strategy,Sims,FP_rate(CI_lo>0)%,FP_rate(p<0.05)%
+Trend200,100,0.0,16.0
+VT_EWMA,100,5.0,8.0

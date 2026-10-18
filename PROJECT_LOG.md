@@ -41,3 +41,7 @@ Added `SUMMARY.md` and `forecast_today.py` (paper-tracking 5-day vol forecast, a
 
 ## Day 5-7
 Robustness checks, clip-check (BTC cap explanation), fixed `forecast_today.py` (drops incomplete candle), and Day 7 long-history expanding walk-forward backtest with a pre-registered pass rule. See `SUMMARY.md`.
+
+
+## Day 13-32
+Research modules 13-28 (audit, leakage, placebo, vol horse race, Chronos-2 vol, equal-vol strategy tests, trend grid, costs, subperiods, ES, VaR grid, dependence, drawdown stop), Holm/BH correction (29), live-evaluation infrastructure + PREREG.md (30), FINAL_REPORT.md (31). See FINAL_REPORT.md.

@@ -11,3 +11,6 @@ Research project (Kaggle + GitHub). Goal: test whether time-series models (Chron
 - .github/workflows/daily_forecast.yml: runs both daily (GitHub Actions).
 
 Paper-tracking only. Not financial advice.
+
+## Update (Days 13-32)
+See FINAL_REPORT.md (all results), PREREG.md (live evaluation rules), LIVE_STATUS.md (auto-updated once the daily workflow runs), tests/ and core.py.
