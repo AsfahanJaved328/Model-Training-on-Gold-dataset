@@ -37,3 +37,6 @@ GOLD+EWMA vol-targeting showed borderline-significant Sharpe gain vs Buy&Hold an
 
 ## Day 6
 Added `SUMMARY.md` and `forecast_today.py` (paper-tracking 5-day vol forecast, appends to `results/forecast_log.csv`).
+
+## Day 5-7
+Robustness checks, clip-check (BTC cap explanation), fixed `forecast_today.py` (drops incomplete candle), and Day 7 long-history expanding walk-forward backtest with a pre-registered pass rule. See `SUMMARY.md`.

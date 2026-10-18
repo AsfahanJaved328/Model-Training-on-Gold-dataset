@@ -6,19 +6,18 @@ ASSETS = {"GOLD": ("GC=F", 252), "BTC": ("BTC-USD", 365)}
 H = 5
 
 def load(ticker):
-    start = (dt.date.today() - dt.timedelta(days=3 * 365 + 30)).isoformat()
+    today = pd.Timestamp(dt.datetime.now(dt.timezone.utc).date())
+    start = (today - pd.Timedelta(days=3 * 365 + 30)).strftime("%Y-%m-%d")
     df = yf.download(ticker, start=start, progress=False, auto_adjust=True)
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = df.columns.get_level_values(0)
     c = df["Close"].dropna()
-    today = pd.Timestamp(dt.datetime.utcnow().date())
-    return c[c.index < today]   # aaj ki adhoori candle hata do
+    return c[c.index < today]          # aaj ki adhoori candle hata do
 
 def forecast(close):
     r = np.log(close).diff()
     D = pd.DataFrame({
-        "v5": np.log(r.rolling(5).std()),
-        "v22": np.log(r.rolling(22).std()),
+        "v5": np.log(r.rolling(5).std()), "v22": np.log(r.rolling(22).std()),
         "v66": np.log(r.rolling(66).std()),
         "ew": 0.5 * np.log((r ** 2).ewm(alpha=0.06).mean()),
     }).replace([np.inf, -np.inf], np.nan)

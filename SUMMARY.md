@@ -1,20 +1,18 @@
-# Summary (Days 1-6)
+# Summary (Days 1-7)
 
 **Price forecasting (1-day):** Naive beat Chronos-Bolt, Chronos-2, Chronos-2+cov and XGBoost on GOLD and BTC
-over a 250-day rolling backtest. No tradable edge found.
+(250-day rolling backtest). No tradable edge.
 
-**Volatility forecasting (5-day):** EWMA, HAR and Chronos-2 beat Persistence (MAE -19% to -26%).
-HAR was best overall; Chronos-2 did not beat HAR.
+**Volatility forecasting (5-day):** EWMA, HAR and Chronos-2 beat Persistence (MAE -19% to -26%); HAR best, Chronos-2 not better than HAR.
 
-**Vol-targeting sizing (400 days, costs included, cap 1x):**
-- GOLD + EWMA: Sharpe +0.35 vs Buy&Hold (90% bootstrap CI 0.01 to 0.66), lower vol-of-vol, and better than a
-  matched constant-exposure control. Borderline evidence: short window, several comparisons, gold was trending up.
-- GOLD + HAR: CI includes 0.
-- BTC: no benefit (EWMA dSharpe -0.10, CI includes 0; HAR ~ Buy&Hold).
+**Vol-targeting (Day 4-5, 400 days):** GOLD+EWMA borderline positive; BTC no effect. Correction: BTC's null result was caused by the
+1x cap (weights clipped at 1 on 73% EWMA / 95% HAR days), not by spike-inflated target vol.
 
-**Correction to Day 4 note:** BTC's lack of effect was NOT due to spike-inflated target vol (median target gave
-the same result).Cause (confirmed by clip check): weights hit the 1x cap on 73% (EWMA) and 95% (HAR) of days, so BTC ran as Buy&Hold.
+**Day 7 long-history test** (Gold from 2005, BTC from 2014; expanding walk-forward; caps 1.0 and 1.5; financing and costs included).
+Pass rule fixed before running: CI90_lo>0 AND beat Buy&Hold in >=60% of years AND better MaxDD.
 
-**Caveats:** small samples, multiple comparisons, no live validation. Not trading advice.
+No configuration passed the pre-registered rule (CI90_lo>0, YearsWon>=60%, MaxDD better than Buy&Hold).
 
-**Next:** run `forecast_today.py` regularly and let `results/forecast_log.csv` build an out-of-sample record.
+Full table: results/metrics_day7_longhistory.csv ; per-year: results/metrics_day7_yearly.csv
+
+**Caveats:** GC=F is continuous futures (roll gaps), cost assumptions are estimates, 12 configs tested per asset set, no live validation. Not trading advice.
