@@ -19,3 +19,9 @@ EWMA/HAR/Chronos-2 beat Persistence for 5-day vol (MAE -19% to -26%); HAR best o
 
 ## Day 4
 Vol-targeting position sizing (cap 1x, costs included) vs Buy&Hold. Results in `results/metrics_day4_sizing.csv`.
+
+## Day 4 finding
+GOLD: EWMA vol-targeting cut vol/DD/vol-of-vol vs Buy&Hold; BTC: almost no effect (target vol was too high, weights clipped at 1). Sharpe differences are within noise (300 days).
+
+## Day 5
+Robustness: 400-day window, two a-priori target definitions, matched constant-exposure controls, block-bootstrap CI for Sharpe difference. See `results/metrics_day5_robustness.csv`.
