@@ -31,3 +31,9 @@ GOLD+EWMA vol-targeting showed borderline-significant Sharpe gain vs Buy&Hold an
 
 ## Day 6
 Added `SUMMARY.md` and `forecast_today.py` (paper-tracking 5-day vol forecast, appends to `results/forecast_log.csv`).
+
+## Day 5 finding
+GOLD+EWMA vol-targeting showed borderline-significant Sharpe gain vs Buy&Hold and vs constant-exposure control; GOLD+HAR and BTC did not. Correction: the Day 4 note blaming spike-inflated target vol for BTC is wrong (median target gave the same result).
+
+## Day 6
+Added `SUMMARY.md` and `forecast_today.py` (paper-tracking 5-day vol forecast, appends to `results/forecast_log.csv`).

@@ -13,7 +13,7 @@ HAR was best overall; Chronos-2 did not beat HAR.
 - BTC: no benefit (EWMA dSharpe -0.10, CI includes 0; HAR ~ Buy&Hold).
 
 **Correction to Day 4 note:** BTC's lack of effect was NOT due to spike-inflated target vol (median target gave
-the same result). Likely cause: test-period vol below pre-test levels so weights clipped at 1; see clip check.
+the same result).Cause (confirmed by clip check): weights hit the 1x cap on 73% (EWMA) and 95% (HAR) of days, so BTC ran as Buy&Hold.
 
 **Caveats:** small samples, multiple comparisons, no live validation. Not trading advice.
 

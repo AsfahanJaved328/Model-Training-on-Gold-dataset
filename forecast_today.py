@@ -10,7 +10,9 @@ def load(ticker):
     df = yf.download(ticker, start=start, progress=False, auto_adjust=True)
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = df.columns.get_level_values(0)
-    return df["Close"].dropna()
+    c = df["Close"].dropna()
+    today = pd.Timestamp(dt.datetime.utcnow().date())
+    return c[c.index < today]   # aaj ki adhoori candle hata do
 
 def forecast(close):
     r = np.log(close).diff()
