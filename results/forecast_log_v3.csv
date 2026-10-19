@@ -1,0 +1,3 @@
+run_date,asset,data_date,vol_persist_pct,vol_ewma_pct,vol_garch_pct,vol_har_pct,vol_ens_pct,ens_ann_vol_pct,var95_1d_pct,var99_1d_pct,above_sma200,invvol_weight
+2026-10-19,GOLD,2026-10-16,1.0592,1.1797,1.2036,1.2694,1.2182,19.34,-1.972,-3.66,0,0.588
+2026-10-19,BTC,2026-10-17,1.2012,1.6596,2.1173,1.9484,1.9178,36.64,-2.751,-5.018,1,0.412
