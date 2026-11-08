@@ -4,8 +4,8 @@
 
 ```
   run_date asset  data_date  vol_persist_pct  vol_ewma_pct  vol_garch_pct  vol_har_pct  vol_ens_pct  ens_ann_vol_pct  var95_1d_pct  var99_1d_pct  above_sma200  invvol_weight
-2026-11-06   BTC 2026-11-05           3.2750        2.2736         2.6237       2.4766       2.4621            47.04        -3.715        -6.752             1          0.401
 2026-11-07  GOLD 2026-11-06           1.8219        1.4808         1.4144       1.4151       1.4371            22.81        -2.466        -4.449             0          0.603
+2026-11-08   BTC 2026-11-06           3.2435        2.2052         2.5588       2.4653       2.4144            46.13        -3.603        -6.549             1          0.404
 ```
 
 ## Out-of-sample evaluation (matured forecasts)
