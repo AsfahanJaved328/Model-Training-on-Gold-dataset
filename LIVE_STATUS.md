@@ -4,17 +4,17 @@
 
 ```
   run_date asset  data_date  vol_persist_pct  vol_ewma_pct  vol_garch_pct  vol_har_pct  vol_ens_pct  ens_ann_vol_pct  var95_1d_pct  var99_1d_pct  above_sma200  invvol_weight
-2026-11-12   BTC 2026-11-11           1.2086        1.9908         2.3611       2.1957       2.1878            41.80        -3.253        -5.913             1          0.426
-2026-11-13  GOLD 2026-11-12           1.7432        1.5903         1.5039       1.4706       1.5224            24.17        -2.658        -4.760             0          0.555
+2026-11-14   BTC 2026-11-12           2.0162        2.1229         2.4638       2.3160       2.3051            44.04        -3.483        -6.297             0          0.422
+2026-11-14  GOLD 2026-11-13           1.6915        1.5419         1.4668       1.4646       1.4915            23.68        -2.577        -4.615             0          0.578
 ```
 
 ## Out-of-sample evaluation (matured forecasts)
 
-### BTC (N=19)
-- mean QLIKE (lower is better): persist 1.538, ewma 0.412, garch 0.336, har 0.328, ens 0.331
-- VaR95 violations 3/19 (15.8% vs 5%), binomial p=0.067
-- status: monitoring only (need 120 matured forecasts, have 19)
-### GOLD (N=15)
-- mean QLIKE (lower is better): persist 0.542, ewma 0.392, garch 0.371, har 0.307, ens 0.352
-- VaR95 violations 2/15 (13.3% vs 5%), binomial p=0.171
-- status: monitoring only (need 120 matured forecasts, have 15)
+### BTC (N=20)
+- mean QLIKE (lower is better): persist 1.476, ewma 0.392, garch 0.323, har 0.315, ens 0.317
+- VaR95 violations 3/20 (15.0% vs 5%), binomial p=0.075
+- status: monitoring only (need 120 matured forecasts, have 20)
+### GOLD (N=16)
+- mean QLIKE (lower is better): persist 0.509, ewma 0.370, garch 0.352, har 0.293, ens 0.333
+- VaR95 violations 2/16 (12.5% vs 5%), binomial p=0.189
+- status: monitoring only (need 120 matured forecasts, have 16)
